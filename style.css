@@ -1,0 +1,231 @@
+/* === Base Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* === Container === */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* === Header === */
+.header {
+    background-color: #58cc02;
+    /* Duolingo green */
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+    opacity: 0.85;
+}
+
+/* Hamburger */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #58cc02;
+        padding: 1rem;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* === Section Styling === */
+.hero {
+    padding: 3rem 0;
+    background-color: #f5fdf1;
+    border-bottom: 2px solid #e0f3d0;
+}
+
+.hero h2 {
+    color: #58cc02;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.hero h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: #329c0c;
+}
+
+/* === Images === */
+.hero-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem auto;
+    display: block;
+}
+
+/* === Paragraphs & Lists === */
+.hero p {
+    margin: 1rem 0;
+    font-size: 1.05rem;
+    text-align: center;
+}
+
+.kant-list {
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    color: #2d5018;
+    font-size: 1rem;
+}
+
+.kant-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* === Table === */
+.projects-table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    margin: 2rem 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.projects-table table {
+    min-width: 600px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.projects-table th,
+.projects-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+.projects-table th {
+    background-color: #e5f8d2;
+    color: #2a6e0e;
+    text-align: left;
+}
+
+/* === Image Grid === */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.image-grid img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* === YouTube Embed === */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    top: 0;
+    left: 0;
+}
+
+/* === Download Links === */
+#downloads a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#downloads a:hover {
+    text-decoration: underline;
+}
+
+/* === Anchor Offset Fix for Sticky Header === */
+.anchor-offset {
+    display: block;
+    height: 100px;
+    /* same as sticky header height */
+    margin-top: -100px;
+    visibility: hidden;
+    pointer-events: none;
+}
